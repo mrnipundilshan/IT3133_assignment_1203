@@ -2,6 +2,16 @@ import { useEffect, useState } from "react";
 
 export default function Cart({cart}) {
 
+    const [total, setTotal] = useState(0)
+
+    useEffect(()=>{
+        let newTotal = 0
+        cart.forEach(({ price }) => {
+            newTotal += price
+        })
+        setTotal(newTotal)
+    },[cart])
+
     return (
         <div className="table-container">
             <h4 className="card-title">Cart</h4>
