@@ -8,7 +8,26 @@ import { useState } from 'react';
 export default function Products() {
     const [cart, setCart] = useState([])
 
-
+    const addToCart = (product) => {
+        setCart((prev) => {
+            const existingProduct = prev.find((item) => {
+                return (
+                    item.name === product.name
+                )
+            })
+            if (existingProduct) {
+                return prev.map((item) => {
+                    return (
+                        item.name === product.name
+                            ? { ...item, qty: item.qty + product.qty, price: item.price + product.price }
+                            : item
+                    )
+                })
+            }
+            return [...prev, product]
+        })
+    }
+    
     return (
         <>
             <div className="item1">
