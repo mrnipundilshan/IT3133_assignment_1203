@@ -27,7 +27,7 @@ export default function Products() {
             return [...prev, product]
         })
     }
-    
+
     return (
         <>
             <div className="item1">
@@ -38,7 +38,13 @@ export default function Products() {
                 <div className="grid-container">
                     {
                         //product
-                        
+                        flowers.map(({ name, img, price }, key) => {
+                            return (
+                                <div key={key}>
+                                    <Product name={name} price={price} img={img} addToCart={addToCart} />
+                                </div>
+                            )
+                        })
                     }
                 </div>
 
