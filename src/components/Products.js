@@ -6,7 +6,8 @@ import Cart from './Cart';
 import { useState } from 'react';
 
 export default function Products() {
-    
+    const [cart, setCart] = useState([])
+
 
     return (
         <>
