@@ -53,6 +53,7 @@ export default function Products() {
                 {
                     //cart
                 }
+                 <Cart cart={cart} />
                 
             </div>
         </>
