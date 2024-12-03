@@ -24,7 +24,13 @@ export default function Cart({cart}) {
 
                 </thead>
                 {cart && cart.map(({ name, qty, price }, index) => {
-                    
+                    return (
+                        <tr key={index}>
+                            <td>{name}</td>
+                            <td>{qty}</td>
+                            <td>{price}</td>
+                        </tr>
+                    )
                 })
                 }
                 <tr>
